@@ -1,0 +1,4 @@
+[
+  { "id": 1, "name": "Jonas", "surname": "Jonaitis", "dob": "1997-08-01", "city": "Vilnius", "program": "JS", "group": "JS-21" },
+  { "id": 2, "name": "Petras", "surname": "Petrauskas", "dob": "190-11-11", "city": "Ukmerge", "program": "JAVA", "group": "JAVA-25" }
+]
