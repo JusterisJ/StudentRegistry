@@ -1,0 +1,47 @@
+import React, { useState } from "react";
+
+export default function AddStudentForm({ addStudent, setShowAddStudentForm }) {
+  const [student, setStudent] = useState({});
+
+  function updateStudent(e) {
+    console.log(e);
+    student[e.target.name] = e.target.value;
+    console.log(e.target);
+    console.log(student);
+  }
+  function clearFormInputs(e) {
+    for (let i = 0; i < e.target.length; i++) {
+      e.target[1].value = "";
+    }
+  }
+  return (
+    <div>
+      <div>
+        <form
+          onChange={(e) => updateStudent(e)}
+          onSubmit={(e) => {
+            e.preventDefault();
+            addStudent(student);
+            setStudent({});
+            console.log(student);
+            clearFormInputs(e);
+            setShowAddStudentForm(false);
+          }}
+        >
+          <div className="form-group">
+            <label htmlFor="id">id:</label>
+            <input type="text" name="id" id="name" className="form-control w-25" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="name">Name:</label>
+            <input required type="text" name="name" id="name" className="form-control w-25" />
+          </div>
+
+          <button type="submit" className="add btn btn-success">
+            Add Student
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
