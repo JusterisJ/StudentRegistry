@@ -13,7 +13,7 @@ export default function Student({ editStudent, deleteStudent, id, name, surname,
         <button onClick={() => deleteStudent(id)} className="delete btn btn-danger">
           Delete ❌
         </button>
-        {showEditForm ? <EditStudentForm setShowEditForm={setShowEditForm} editStudent={editStudent} id={id} name={name} /> : false}
+        {showEditForm ? <EditStudentForm setShowEditForm={setShowEditForm} editStudent={editStudent} id={id} name={name} surname={surname} dob={dob} city={city} program={program} group={group} /> : false}
       </p>
     </div>
   );
